@@ -1,5 +1,4 @@
 from microbit import sleep, i2c
-import PCA9685
 import motor
 
 Motor = motor.DCMotors(i2c)

@@ -1,5 +1,4 @@
-from microbit import sleep, i2c, button_a, button_b
-import PCA9685
+from microbit import i2c, button_a, button_b
 import motor
 
 Motor = motor.DCMotors(i2c)
@@ -10,6 +9,10 @@ while True:
         speed += 50
     elif button_b.is_pressed():
         speed -= 50
+    if speed < 0:
+        speed = 0
+    if speed > 250:
+        speed = 250
         
     Motor.MotorRun(1, speed)
     Motor.MotorRun(3, speed)
