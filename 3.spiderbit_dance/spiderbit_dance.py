@@ -3,7 +3,7 @@ import motor
 
 Motor = motor.DCMotors(i2c)
 
-if button_a.is_pressed():
+while button_a.is_pressed():
     while True:
         Motor.MotorRun(1, 120)
         Motor.MotorRun(3, 120)
